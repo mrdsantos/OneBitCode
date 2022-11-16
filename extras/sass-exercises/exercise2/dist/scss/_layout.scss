@@ -1,0 +1,12 @@
+@import 'mixins';
+@import 'variables';
+
+#container {
+    @include layout(darkred, 14px);
+    @media screen and (max-width: $small){
+        @include layout(darkblue, 16px);
+    }
+    @media screen and (min-width: $medium) {
+        @include layout(darkgreen, 20px);
+        }
+}
