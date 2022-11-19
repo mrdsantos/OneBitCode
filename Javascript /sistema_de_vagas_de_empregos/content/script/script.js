@@ -1,6 +1,19 @@
 let userOption
-let positions = []
-let applicants = []
+let positions = [
+	{
+		name: "str",
+		description: "str",
+		duedate: "str",
+		applicants: "dynamic",
+	}
+]
+let applicants = [
+	{
+		adress: "rua frente, 15, marilia.",
+		email: "mariagostin12@email.com",
+		name: "Maria Pimpola",
+	}
+]
 
 const optionPrompt = (input) => {
 	userOption = prompt(
@@ -12,12 +25,11 @@ const optionPrompt = (input) => {
 			"5- Excluir vagas.\n" +
 			"6- Sair."
 	)
-    return userOption
+	return userOption
 }
 
 const menu = (userInput) => {
 	while (userOption !== "6" || false) {
-		
 		switch (userOption) {
 			case null:
 				alert("Execução abortada pelo usuário. (Esc)")
@@ -30,13 +42,13 @@ const menu = (userInput) => {
 				break
 			case "2":
 				positionNew()
-                optionPrompt()
+				optionPrompt()
 				break
 			case "3":
 				break
 			case "4":
 				applicantNew()
-                optionPrompt()
+				optionPrompt()
 				break
 
 			case "5":
@@ -89,16 +101,21 @@ const applicantNew = () => {
 
 //---- Under Construction ↓↓↓
 
-const positionList = (positions) => {
-	let positionAvailable
-	positions.forEach((element) => {})
+const posistionsDisplay = () => {
+	let result = []
+	positions.forEach((element) => {
+		concat(positions.name)
+	})
 
-	alert("Vagas disponíveis:\n")
+	console.log(result)
+	//desidered result: Vaga 1, Balconista,
+	// Numero de Candidatos inscritos na vaga
+	//numero total de candidatos
 }
 
 //---- Standby of functions calls so Quokka doesnt go nuts
-optionPrompt()
-menu()
+//optionPrompt()
+//menu()
 
 //---- Templates
 // Position Template
