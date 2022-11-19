@@ -1,9 +1,21 @@
 let userOption
 let positions = [
 	{
-		name: "str",
-		description: "str",
-		duedate: "str",
+		name: "Diarista",
+		description: "Cuidar da casa",
+		duedate: "22/07/2022",
+		applicants: "dynamic",
+	},
+    {
+		name: "Pedreiro",
+		description: "Trabalhar na obra",
+		duedate: "22/07/2022",
+		applicants: "dynamic",
+	},
+    {
+		name: "Churrasqueiro",
+		description: "Assar carne",
+		duedate: "22/07/2022",
 		applicants: "dynamic",
 	}
 ]
@@ -14,6 +26,8 @@ let applicants = [
 		name: "Maria Pimpola",
 	}
 ]
+
+console.log("Vagas Disponiveis\n" +positions[0].name)
 
 const optionPrompt = (input) => {
 	userOption = prompt(
@@ -99,25 +113,33 @@ const applicantNew = () => {
 	}
 }
 
-//---- Under Construction ↓↓↓
 
-const posistionsDisplay = () => {
-	let result = []
-	positions.forEach((element) => {
-		concat(positions.name)
-	})
 
-	console.log(result)
-	//desidered result: Vaga 1, Balconista,
-	// Numero de Candidatos inscritos na vaga
-	//numero total de candidatos
+const posistionsList = (arr = []) => {
+	let result = ""
+	let counter = 0
+	arr.reduce( (acc, value)=> {
+		if (value.name) {
+			result += "Vaga: " + value.name + ". ID: " + counter + ".\n"
+			counter++
+		}
+		
+	}, [])
+	result += "\nQuantidade total de Candidatos cadastrados: " + applicants.length + "."
+	// I did really tried to get the element index dynamically instead of using a counter
+	// If you do know how please let me know
+	return result
+	
 }
 
-//---- Standby of functions calls so Quokka doesnt go nuts
-//optionPrompt()
-//menu()
+// ---- Under Construction ↓↓↓
 
-//---- Templates
+
+// ---- Standby of functions calls so Quokka doesnt go nuts
+// optionPrompt()
+// menu()
+
+// ---- Templates
 // Position Template
 // {
 //     name: str,
