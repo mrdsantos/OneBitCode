@@ -27,8 +27,6 @@ let applicants = [
 	}
 ]
 
-console.log("Vagas Disponiveis\n" +positions[0].name)
-
 const optionPrompt = (input) => {
 	userOption = prompt(
 		"Sistema de Vagas de Emprego\n" +
@@ -124,7 +122,7 @@ const posistionsList = (arr = []) => {
 			counter++
 		}
 		
-	}, [])
+	},)
 	result += "\nQuantidade total de Candidatos cadastrados: " + applicants.length + "."
 	// I did really tried to get the element index dynamically instead of using a counter
 	// If you do know how please let me know
@@ -132,9 +130,39 @@ const posistionsList = (arr = []) => {
 	
 }
 
-// ---- Under Construction ↓↓↓
+const positionDetails = (input, arr=[]) => {
+	input = prompt("Digite a ID da vaga para visualizar os detalhes")
+	let result = "Vagas disponíveis:\n"
+	let counter = 0
+	arr.reduce((acc, value) => {
+		if (value.name) {
+			result += "Vaga: " + value.name + ". ID: " + counter + ".\n"
+			counter++
+		}
 
+	})
+	if (input == arr[input]) {
+		alert(arr[input])
+	}
+	else {
+		alert("O ID de vaga inserido não existe.")
+	}
+}
 
+//---- Under Construction ↓↓↓
+
+const applicantList = (arr = []) => {
+	let result = ""
+	let counter = 0
+	arr.reduce( (acc, value)=> {
+		if (value.name) {
+			result += "Candidato: " + value.name + ". ID: " + counter + ".\n"
+			counter++
+		}
+		
+	}, [])
+	result += "Lista de candidatos cadstrados: \n"
+}
 // ---- Standby of functions calls so Quokka doesnt go nuts
 // optionPrompt()
 // menu()
@@ -142,12 +170,12 @@ const posistionsList = (arr = []) => {
 // ---- Templates
 // Position Template
 // {
-//     name: str,
-//     description: str,
-//     duedate: str,
-//     applicants: dynamic
-// }
-
+	//     name: str,
+	//     description: str,
+	//     duedate: str,
+	//     applicants: dynamic
+	// }
+	
 // Applicant Template
 // {
 //     name: str,
