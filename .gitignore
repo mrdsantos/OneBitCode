@@ -1,6 +1,6 @@
 #Personal Ignores
 *.zip
-**exerc**
+exerc**
 
 # VSCode
 .vscode/*
