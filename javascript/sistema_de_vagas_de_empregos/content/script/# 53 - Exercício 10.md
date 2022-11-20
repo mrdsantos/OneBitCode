@@ -6,12 +6,13 @@
 - Ter um um menu onde é possível escolher entre as diferentes funcionalidades do sistema
     ~~- Listar vagas disponíveis~~
     ~~- Criar um nova vaga~~
-    - Visualizar uma vaga
+    ~~- Visualizar uma vaga~~
+        --need tests
     ~~- Inscrever um cadidato~~
-    - Inscrever um candidato em uma vaga
+    ~~- Inscrever um candidato em uma vaga~~
     - Excluir uma vaga
-    - Sair
-    - Refatorar as funções atualizando as variaveis declaradas por declarações
+    ~~- Sair~~
+    - Refatorar todas as funções
 
 
 # Functions
@@ -21,9 +22,11 @@
 ~~- A opção de criar uma nova vaga deve pedir um nome para a vaga, uma descrição e uma data limite, e também deve pedir que o usuário confirme as informações antes de salvá-las.~~
 
 
-- A opção de visualizar uma vaga deve pedir o índice da vaga e mostrar todas as informações dela: índice, nome, descrição, data limite, quantidade de candidatos e o nome dos candidatos.
+~~- A opção de visualizar uma vaga deve pedir o índice da vaga e mostrar todas as informações dela: índice, nome, descrição, data limite, quantidade de candidatos e o nome dos candidatos.~~
 
 
-- A opção de inscrever um candidato em uma vaga ~~e pedir o nome do candidato, o índice da vaga e então uma confirmação exibindo as informações da vaga antes de salvar o candidato na vaga.~~
+~~- A opção de inscrever um candidato.~~
+  
+~~- A opção de inscrever o candidato em uma vaga e pedir o nome do candidato, o índice da vaga e então uma confirmação exibindo as informações da vaga antes de salvar o candidato na vaga.~~
 
 - A opção de excluir uma vaga deve pedir o índice da vaga, mostrar suas informações e pedir que o usuário confirme a exclusão da vaga antes de realmente exclui-la.
