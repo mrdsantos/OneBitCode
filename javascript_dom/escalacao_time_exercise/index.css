@@ -1,0 +1,24 @@
+@import "./picnic.min.css";
+
+body {
+    margin: 10px 10px auto;
+}
+
+.clean {
+    list-style-type: none;
+}
+
+ul {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 2vw;
+}
+
+#btnAdd {
+    width: 240px;
+}
+
+#btnRmv {
+    width: 240px;
+}
+
