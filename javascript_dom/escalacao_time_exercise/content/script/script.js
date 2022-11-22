@@ -39,10 +39,16 @@ document
 			{ id: "playerListCol" }
 		)
 	)
-
-// create forms
 document
 	.getElementById("playerAddCol")
+	.append(
+		Object.assign(document.createElement("div"), { id: "playerAddColLeft" }),
+		Object.assign(document.createElement("div"), { id: "playerAddColRight" })
+	)
+
+// create forms of left column inside playerAddColumn
+document
+	.getElementById("playerAddColLeft")
 	.append(
 		Object.assign(
 			document.createElement("label"),
@@ -52,24 +58,24 @@ document
 	)
 
 document
-	.getElementById("playerAddCol")
+	.getElementById("playerAddColLeft")
 	.append(
 		document.createElement(
 			Object.assign("input"),
 			{ type: "text" },
 			{ placeholder: "Digite o nome do jogador" },
-			{ name: "playerNameAdd" },
+			{ name: "playerNameAdd" }
 		)
 	)
 
 // create buttons
 document
-	.getElementById("playerAddCol")
+	.getElementById("playerAddColLeft")
 	.append(
 		Object.assign(
 			document.createElement("button"),
 			{ id: "btnAdd" },
-			{ textContent: "Adicionar Jogador" },
+			{ textContent: "Adicionar Jogador" }
 		)
 	)
 
@@ -79,7 +85,7 @@ document
 		Object.assign(
 			document.createElement("button"),
 			{ id: "btnRmv" },
-			{ textContent: "Remover Jogador" },
+			{ textContent: "Remover Jogador" }
 		)
 	)
 
