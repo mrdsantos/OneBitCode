@@ -1,12 +1,10 @@
 @import "./picnic.min.css";
 
 body {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-}
-
-.clean {
-    list-style-type: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #containerMain {
@@ -18,17 +16,36 @@ body {
     background-color: rgb(41, 105, 82);
 }
 
+input, label, button {
+    margin: .8em;
+}
+
 .column {
     background-color: rgba(230, 255, 227, 0.87);
     padding: 20px 20px;
     border-radius: 10px;
 }
 
+#playeraddcol {
+    width: 60%;
+    flex-grow: 1;
+}
+
+input {
+    display: block;
+    width: 260px;
+}
+
 #btnAdd {
     width: 240px;
+    background-color: rgb(0, 163, 0);
+    display: block;
 }
 
 #btnRmv {
     width: 240px;
+    background-color: rgb(0, 163, 0);
+    display: block;
 }
+
 

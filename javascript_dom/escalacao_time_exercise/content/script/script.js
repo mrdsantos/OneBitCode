@@ -7,11 +7,10 @@ document.body.appendChild(
 )
 document.body.appendChild(Object.assign(document.createElement("hr")))
 
-document.body
-	// create a div
-	.appendChild(
-		Object.assign(document.createElement("div"), { id: "containerMain" })
-	)
+//creates main container and columns
+document.body.appendChild(
+	Object.assign(document.createElement("div"), { id: "containerMain" })
+)
 
 document
 	.getElementById("containerMain")
@@ -41,13 +40,36 @@ document
 		)
 	)
 
+// create forms
+document
+	.getElementById("playerAddCol")
+	.append(
+		Object.assign(
+			document.createElement("label"),
+			{ for: "playerNameAdd" },
+			{ textContent: "Digite o nome do jogador" }
+		)
+	)
+
+document
+	.getElementById("playerAddCol")
+	.append(
+		document.createElement(
+			Object.assign("input"),
+			{ type: "text" },
+			{ placeholder: "Digite o nome do jogador" },
+			{ name: "playerNameAdd" },
+		)
+	)
+
+// create buttons
 document
 	.getElementById("playerAddCol")
 	.append(
 		Object.assign(
 			document.createElement("button"),
 			{ id: "btnAdd" },
-			{ textContent: "Adicionar Jogador" }
+			{ textContent: "Adicionar Jogador" },
 		)
 	)
 
@@ -57,12 +79,13 @@ document
 		Object.assign(
 			document.createElement("button"),
 			{ id: "btnRmv" },
-			{ textContent: "Remover Jogador" }
+			{ textContent: "Remover Jogador" },
 		)
 	)
-document.getElementById("playerListCol").append(
-	Object.assign(
-		document.createElement("p"),
-		{textContent: "some text"}
+
+// placeholder
+document
+	.getElementById("playerListCol")
+	.append(
+		Object.assign(document.createElement("p"), { textContent: "some text" })
 	)
-)
