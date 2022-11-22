@@ -2,29 +2,67 @@ document.title = "Escalação do Time"
 
 document.body.appendChild(
 	Object.assign(document.createElement("h1"), {
-		textContent: "Escalação do time"
+		textContent: "Escalação do time",
 	})
 )
 document.body.appendChild(Object.assign(document.createElement("hr")))
 
 document.body
 	// create a div
-	.appendChild(Object.assign(document.createElement("div")))
-	// append an ul to the div
-	.appendChild(Object.assign(document.createElement("ul"),
-	{className: "clean"}
-	))
-	// append 2x li to ul
-	.append(Object.assign(document.createElement("li"),
-	{id: "li-btnAdd"}
-	),Object.assign(document.createElement("li"),
-	{id: "li-btnRmv"}))
+	.appendChild(
+		Object.assign(document.createElement("div"), { id: "containerMain" })
+	)
 
-	document.getElementById("li-btnAdd").append(Object.assign(document.createElement("button"
-	),
-	{id: "btnAdd"},
-	{textContent: "Adicionar Jogador"}))
+document
+	.getElementById("containerMain")
+	.append(
+		Object.assign(
+			document.createElement("div"),
+			{ className: "column" },
+			{ id: "playerAddCol" }
+		)
+	)
+document
+	.getElementById("containerMain")
+	.append(
+		Object.assign(
+			document.createElement("div"),
+			{ className: "column" },
+			{ id: "playerRmvCol" }
+		)
+	)
+document
+	.getElementById("containerMain")
+	.append(
+		Object.assign(
+			document.createElement("div"),
+			{ className: "column" },
+			{ id: "playerListCol" }
+		)
+	)
 
-	document.getElementById("li-btnRmv").append(Object.assign(document.createElement("button"),
-	{id: "btnRmv"},
-	{textContent: "Remover Jogador"}))
+document
+	.getElementById("playerAddCol")
+	.append(
+		Object.assign(
+			document.createElement("button"),
+			{ id: "btnAdd" },
+			{ textContent: "Adicionar Jogador" }
+		)
+	)
+
+document
+	.getElementById("playerRmvCol")
+	.append(
+		Object.assign(
+			document.createElement("button"),
+			{ id: "btnRmv" },
+			{ textContent: "Remover Jogador" }
+		)
+	)
+document.getElementById("playerListCol").append(
+	Object.assign(
+		document.createElement("p"),
+		{textContent: "some text"}
+	)
+)

@@ -1,17 +1,27 @@
 @import "./picnic.min.css";
 
 body {
-    margin: 10px 10px auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .clean {
     list-style-type: none;
 }
 
-ul {
+#containerMain {
+    padding: 30px;
     display: flex;
     flex-flow: row wrap;
+    min-height: 60%;
     column-gap: 2vw;
+    background-color: rgb(41, 105, 82);
+}
+
+.column {
+    background-color: rgba(230, 255, 227, 0.87);
+    padding: 20px 20px;
+    border-radius: 10px;
 }
 
 #btnAdd {
