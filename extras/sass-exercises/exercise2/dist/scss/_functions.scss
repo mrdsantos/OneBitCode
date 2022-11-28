@@ -1,5 +1,0 @@
-@function invertLig($color) {
-    $invert: invert($color);
-    $light-invert: lighten($invert, 20%);
-    @return $light-invert;
-}

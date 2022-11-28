@@ -1,8 +1,0 @@
-@mixin color-box ($value) {
-        color: $value;
-        background-color: color.adjust($value, $alpha: 0.15);
-        border: 1px solid color.adjust($value, $lightness: -10%);
-        padding: 1rem;
-        margin-bottom: 1rem;
-        border-radius: 0.25rem;
-    }
