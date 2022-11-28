@@ -39,14 +39,16 @@ document
 			{ id: "playerListCol" }
 		)
 	)
-document
-	.getElementById("playerAddCol")
-	.append(
-		Object.assign(document.createElement("div"), { id: "playerAddColLeft" }),
-		Object.assign(document.createElement("div"), { id: "playerAddColRight" })
-	)
+document.getElementById("playerAddCol").append(
+	Object.assign(document.createElement("div"), {
+		id: "playerAddColLeft",
+	}),
+	Object.assign(document.createElement("div"), {
+		id: "playerAddColRight",
+	})
+)
 
-// create forms of left column inside playerAddColumn
+// create content of left column inside playerAddColLeft
 document
 	.getElementById("playerAddColLeft")
 	.append(
@@ -68,7 +70,6 @@ document
 		)
 	)
 
-// create buttons
 document
 	.getElementById("playerAddColLeft")
 	.append(
@@ -79,6 +80,65 @@ document
 		)
 	)
 
+// create content of right column inside playerAddColRight
+document
+	.getElementById("playerAddColRight")
+	.append(
+		Object.assign(
+			document.createElement("label"),
+			{ for: "playerPositionAdd" },
+			{ textContent: "Posição do Jogador" }
+		)
+	)
+
+document
+	.getElementById("playerAddColRight")
+	.append(
+		document.createElement(
+			Object.assign("input"),
+			{ type: "text" },
+			{ name: "playerNameAdd" },
+			{ placeholder: "Digite o nome do jogador" }
+		)
+	)
+
+document
+	.getElementById("playerAddColRight")
+	.append(
+		Object.assign(
+			document.createElement("button"),
+			{ id: "btnAdd" },
+			{ textContent: "Adicionar Jogador" }
+		)
+	)
+
+document
+	.getElementById("playerAddColRight")
+	.append(
+		Object.assign(
+			document.createElement("br")),(document.createElement("br")) 	)
+
+
+document
+	.getElementById("playerAddColRight")
+	.append(
+		Object.assign(
+			document.createElement("label"),
+			{ for: "playerAdd" },
+			{ textContent: "Digite o número do jogador" },
+			{ name: "playerAdd" },
+			{ input: "text"}
+		)
+	)
+
+document
+	.getElementById("playerAddColRight")
+	.append(Object.assign(document.createElement("input"),
+	{type: "text"},
+	{name: "playerAdd"}
+	))
+
+// create buttons
 document
 	.getElementById("playerRmvCol")
 	.append(
