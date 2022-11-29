@@ -1,42 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
-    <!-- <script defer src="./content/script/script.js"></script> -->
-    <title>Escalação de Time</title>
-</head>
-<body>
-    <h1>Escalação do Time</h1>
-    <div id="containerMain" class="column">
-        <div id="playerAddCol" class="column">
-            <h2>Adicionar Jogador</h2>
-            <div id="playerAddColLeft">
-                <label for="addPlayer">Nome do Jogador
-                    <input type="text" placeholder="Digite o nome do jogador" name="addPlayer">
-                </label>
-            </div>
-            <div id="playerAddColRight">
-                <label for="addPlayer">Posição do Jogador
-                    <input type="text" placeholder="Digite o nome do jogador" name="addPlayer">
-                </label>
-            </div>
-        </div>
-        <div add="playerRmvCol" class="column">
-            <h2>Remover Jogador</h2>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./index.css" />
+		<script defer src="./content/script/script.js"></script>
+		<title>Escalação de Time</title>
+	</head>
 
-        </div>
-        <div id="playerListCol" class="column">
-            <h2>Lista de Jogadores</h2>
-        </div>
-        
+	<body>
+		<container class="container">
+			<h1>Escalação do Time</h1>
+			<main id="containerMain" class="column">
+				<section id="playerAddCol" class="column">
+					<h2 class="flextitle">Adicionar Jogador</h2>
+					<div>
+						<label for="playerName"><h4>Nome do Jogador</h4></label>
+						<input
+							type="text"
+							placeholder="Digite o nome do jogador"
+							name="playerName"
+							id="playerName"
+						/>
+					</div>
+					<div>
+						<label for="playerPosition"
+							><h4>Posição do Jogador</h4></label
+						>
+						<input
+							type="text"
+							placeholder="Digite a posição do jogador"
+							name="playerPositon"
+							id="playerPosition"
+						/>
+					</div>
+					<div>
+						<label for="playerNumber"
+							><h4>Número do Jogador</h4></label
+						>
+						<input
+							type="text"
+							placeholder="Digite o número do jogador"
+							name="playerNumber"
+							id="playerNumber"
+						/>
+					</div>
+					<div class="btn--flex">
+						<button id="btnPlayerAdd">Escalar Jogador</button>
+					</div>
+				</section>
 
-
-    </div>
-
-    
-</body>
-
+				<section id="playerRmvCol" class="column">
+					<h2>Remover Jogador</h2>
+					<label for="playerNumberRmv"
+						><h4>
+							Digite o número do jogador a ser retirado
+						</h4></label
+					>
+					<input
+						type="text"
+						placeholder="Digite o número do jogador"
+						name="playerNumberRmv"
+						id="playerNumberRmv"
+					/>
+					<br /><br />
+					<button id="btnPlayerRmv">Remover Jogador</button>
+				</section>
+				
+				<section id="playerListCol" class="column">
+					<h2 class="flextitle">Lista de Jogadores</h2>
+				</section>
+			</main>
+		</container>
+		<footer>
+			<p>Footer &#174;</p>
+		</footer>
+	</body>
 </html>

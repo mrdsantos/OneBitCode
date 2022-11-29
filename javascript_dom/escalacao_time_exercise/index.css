@@ -1,64 +1,86 @@
 @import "./picnic.min.css";
 
-body {
+form {
+    all: revert;
+}
+* {
     box-sizing: border-box;
+        
+}
+
+body {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+
 }
 
 #containerMain {
+    flex: 1 0 auto;
     padding: 30px;
     display: flex;
     flex-flow: row wrap;
-    min-height: 60%;
-    column-gap: 2em;
+    gap: 2rem;
     background-color: rgb(41, 105, 82);
+    
 }
 
 .column {
     background-color: rgba(230, 255, 227, 0.87);
     padding: 1.1em 1em;
-    border-radius: 10px;
 }
 
-#playerAddCol {
-    max-width: 40%;
+#playerAddCol, #playerListCol {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-}
-
-#playerAddColLeft {
-    max-width: 45%;
-    margin: 0 auto;
-    padding: 0.3em;
+    flex-flow: row wrap;    
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: space-around;
+    gap: 1rem;
     text-align: center;
-    border-right: 0.5px rgba(255, 255, 255, 0.486) solid;
+    max-width: 35vw;
 }
 
-#playerAddColRight {
-    max-width: 45%;
-    margin: 0 auto;
-    padding: 0.3em;
-    text-align: center;
-    border-left: 0.5px rgba(255, 255, 255, 0.486) solid;
+#playerListCol > div {
+       text-align: left;
 }
 
-#playerAddCol > * > label, input, button {
-    margin: 0.6em auto;
-    max-width: fit-content;
+.btn--flex {
+    align-self: center;
+    padding-top: 2rem;
+}
+
+#playerAddCol > div, #playerListCol > div {
+    flex: 1 0 43%;
+    min-width: 10rem;
     
 }
 
-#btnAdd {
-    width: 240px;
-    background-color: rgb(0, 163, 0);
-}
-
-#btnRmv {
-    width: 240px;
-    background-color: rgb(0, 163, 0);
+.flextitle {
+    flex-basis: 100%;
 }
 
 
+#playerRmvCol {
+    text-align: center;
+}
+
+
+
+footer {
+    padding: 1rem;
+    background-color: rgb(1, 24, 4);
+    height: 80px;
+    color: rgb(41, 105, 82);
+    width: 100%;
+}
+
+footer > p {
+text-align: right;
+}
