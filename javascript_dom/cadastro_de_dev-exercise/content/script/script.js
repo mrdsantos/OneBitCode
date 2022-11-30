@@ -1,5 +1,3 @@
-//use of documentFragment() in favor of innertext
-
 let developer = {
 	name: "",
 	stack: "",
@@ -14,7 +12,9 @@ devRegisterForm.addEventListener("submit", (ev) => {
 let btnDetails = document.getElementById("btnDevDetails")
 
 btnDetails.addEventListener("click", (ev) => {
-	devRegisterForm.append(devStackInput(), devExperienceInput())
+	btnDetails.disabled = true
+	let formChildren = document.getElementById("formChildren")
+	formChildren.append(devStackInput(), devExperienceInput(), confirmation())
 })
 
 let btnRmvInput = document.createElement("button")
@@ -35,6 +35,11 @@ const devStackInput = () => {
 
 	let btnRmvInputStack = btnRmvInput.cloneNode(true)
 	btnRmvInputStack.id = "btnRmvInputStack"
+	btnRmvInputStack.addEventListener("click", (ev) => {
+		let childElement = document.getElementById("btnRmvInputStack")
+		childElement.parentElement.remove()
+	})
+
 	div.append(labelInputStack, inputStack, btnRmvInputStack)
 
 	return div
@@ -79,19 +84,60 @@ const devExperienceInput = () => {
 	labelDevExperienceRadio3.textContent = "5+ Anos"
 	labelDevExperienceRadio3.className = "checkable inline-block"
 
-
-    let btnRmvInputExperience = btnRmvInput.cloneNode(true)
+	let btnRmvInputExperience = btnRmvInput.cloneNode(true)
 	btnRmvInputExperience.id = "btnRmvInputExperience"
+	btnRmvInputExperience.addEventListener("click", (ev) => {
+		let childElement = document.getElementById("btnRmvInputExperience")
+		childElement.parentElement.remove()
+	})
+
 	div.append(
 		titleDevExperience,
 		devExperienceRadio1,
 		labelDevExperienceRadio1,
 		devExperienceRadio2,
-        labelDevExperienceRadio2,
-        devExperienceRadio3,
-        labelDevExperienceRadio3,
+		labelDevExperienceRadio2,
+		devExperienceRadio3,
+		labelDevExperienceRadio3,
 		btnRmvInputExperience
 	)
 
 	return div
+}
+
+const confirmation = () => {
+	let div = document.createElement("div")
+	let btnSave = document.createElement("button")
+	btnSave.textContent = "Salvar"
+	btnSave.id = "btnSave"
+	btnSave.className = "green"
+	btnSave.addEventListener("click", (ev) => {
+		btnDetails.disabled = false
+        resetInput()
+		let formChildren = document.getElementById("formChildren")
+		while (formChildren.firstChild) {
+			formChildren.removeChild(formChildren.firstChild)
+		}
+	})
+
+	let btnCancel = document.createElement("button")
+	btnCancel.textContent = "Cancelar"
+	btnCancel.id = "btnCancel"
+	btnCancel.className = "red"
+	btnCancel.addEventListener("click", (ev) => {
+		btnDetails.disabled = false
+        resetInput()
+		let formChildren = document.getElementById("formChildren")
+		while (formChildren.firstChild) {
+			formChildren.removeChild(formChildren.firstChild)
+		}
+	})
+
+	div.append(btnCancel, btnSave)
+	return div
+}
+
+const resetInput = () => {
+    let resetInput = document.getElementById("inputDevName")
+    resetInput.value = ""
 }
