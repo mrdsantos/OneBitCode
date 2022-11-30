@@ -1,0 +1,24 @@
+@import "./picnic.css";
+
+h1, h2, h3, h4, h5, p, div, button, input, label {
+    margin: 1rem 1rem auto 1rem;
+}
+
+
+input {
+    max-width: 40vw;
+}
+
+.btnDetails {
+    height: 40px;
+    width: 40px;
+}
+
+.devRegister label {
+    display: block;
+    font-weight: bold;
+}
+
+.red {
+    background-color: rgb(223, 80, 80);
+}
