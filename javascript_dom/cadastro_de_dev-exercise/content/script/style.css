@@ -1,12 +1,16 @@
 @import "./picnic.css";
 
-h1, h2, h3, h4, h5, p, div, button, input, label {
+h1, h2, h3, h4, h5, p, button, input, label {
     margin: 1rem 1rem auto 1rem;
 }
 
 
 input {
     max-width: 40vw;
+}
+
+.inline-block {
+    display: inline-block !important;
 }
 
 .btnDetails {
