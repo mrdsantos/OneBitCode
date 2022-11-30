@@ -1,8 +1,4 @@
-let developer = {
-	name: "",
-	stack: "",
-	experience: "",
-}
+let developer = []
 
 let devRegisterForm = document.getElementById("devRegisterForm")
 devRegisterForm.addEventListener("submit", (ev) => {
@@ -10,11 +6,10 @@ devRegisterForm.addEventListener("submit", (ev) => {
 })
 
 let btnDetails = document.getElementById("btnDevDetails")
-
 btnDetails.addEventListener("click", (ev) => {
 	btnDetails.disabled = true
 	let formChildren = document.getElementById("formChildren")
-	formChildren.append(devStackInput(), devExperienceInput(), confirmation())
+	formChildren.append(devStackInput(), inputDevExperience(), confirmation())
 })
 
 let btnRmvInput = document.createElement("button")
@@ -45,7 +40,7 @@ const devStackInput = () => {
 	return div
 }
 
-const devExperienceInput = () => {
+const inputDevExperience = () => {
 	let div = document.createElement("div")
 
 	let titleDevExperience = document.createElement("h4")
@@ -53,34 +48,34 @@ const devExperienceInput = () => {
 
 	let devExperienceRadio1 = document.createElement("input")
 	devExperienceRadio1.type = "radio"
-	devExperienceRadio1.id = "devExperienceInput1"
-	devExperienceRadio1.name = "devExperienceInput"
+	devExperienceRadio1.id = "inputDevExperience1"
+	devExperienceRadio1.name = "inputDevExperience"
 	devExperienceRadio1.value = "0-2 years"
 
 	let labelDevExperienceRadio1 = document.createElement("label")
-	labelDevExperienceRadio1.setAttribute("for", "devExperienceInput1")
+	labelDevExperienceRadio1.setAttribute("for", "inputDevExperience1")
 	labelDevExperienceRadio1.textContent = "0-2 Anos"
 	labelDevExperienceRadio1.className = "checkable inline-block"
 
 	let devExperienceRadio2 = document.createElement("input")
 	devExperienceRadio2.type = "radio"
-	devExperienceRadio2.id = "devExperienceInput2"
-	devExperienceRadio2.name = "devExperienceInput"
+	devExperienceRadio2.id = "inputDevExperience2"
+	devExperienceRadio2.name = "inputDevExperience"
 	devExperienceRadio2.value = "3-4 years"
 
 	let labelDevExperienceRadio2 = document.createElement("label")
-	labelDevExperienceRadio2.setAttribute("for", "devExperienceInput2")
+	labelDevExperienceRadio2.setAttribute("for", "inputDevExperience2")
 	labelDevExperienceRadio2.textContent = "3-4 Anos"
 	labelDevExperienceRadio2.className = "checkable inline-block"
 
 	let devExperienceRadio3 = document.createElement("input")
 	devExperienceRadio3.type = "radio"
-	devExperienceRadio3.id = "devExperienceInput3"
-	devExperienceRadio3.name = "devExperienceInput"
+	devExperienceRadio3.id = "inputDevExperience3"
+	devExperienceRadio3.name = "inputDevExperience"
 	devExperienceRadio3.value = "5+ years"
 
 	let labelDevExperienceRadio3 = document.createElement("label")
-	labelDevExperienceRadio3.setAttribute("for", "devExperienceInput3")
+	labelDevExperienceRadio3.setAttribute("for", "inputDevExperience3")
 	labelDevExperienceRadio3.textContent = "5+ Anos"
 	labelDevExperienceRadio3.className = "checkable inline-block"
 
@@ -112,8 +107,9 @@ const confirmation = () => {
 	btnSave.id = "btnSave"
 	btnSave.className = "green"
 	btnSave.addEventListener("click", (ev) => {
+		saveData()
 		btnDetails.disabled = false
-        resetInput()
+		resetInput()
 		let formChildren = document.getElementById("formChildren")
 		while (formChildren.firstChild) {
 			formChildren.removeChild(formChildren.firstChild)
@@ -126,7 +122,7 @@ const confirmation = () => {
 	btnCancel.className = "red"
 	btnCancel.addEventListener("click", (ev) => {
 		btnDetails.disabled = false
-        resetInput()
+		resetInput()
 		let formChildren = document.getElementById("formChildren")
 		while (formChildren.firstChild) {
 			formChildren.removeChild(formChildren.firstChild)
@@ -138,6 +134,23 @@ const confirmation = () => {
 }
 
 const resetInput = () => {
-    let resetInput = document.getElementById("inputDevName")
-    resetInput.value = ""
+	let resetInput = document.getElementById("inputDevName")
+	resetInput.value = ""
+}
+
+const saveData = () => {
+	let newDeveloper = {}
+	newDeveloper.name = document.querySelector(
+		`input[name="inputDevName"]`
+	).value
+	newDeveloper.stack = document.querySelector(
+		`input[name="inputDevStack"]`
+	).value
+	newDeveloper.experience = document.querySelector(
+		`input[name="inputDevExperience"]:checked`
+	).value
+
+	developer.push(newDeveloper)
+
+	return
 }
