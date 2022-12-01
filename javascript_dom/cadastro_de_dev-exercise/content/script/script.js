@@ -7,55 +7,98 @@ devRegisterForm.addEventListener("submit", (ev) => {
 
 let devStackBtnAdd = document.getElementById("devStackBtnAdd")
 devStackBtnAdd.addEventListener("click", (ev) => {
-	// devStackBtnAdd.disabled = true
-	let devRegisterForm = document.getElementById("devRegisterForm")
-	devRegisterForm.append(devStacksPlus())
+	let formChildren = document.getElementById("formChildren")
+	formChildren.append(devStacksPlus())
 })
 
 let devExperienceRow = 1
 
 const devStacksPlus = () => {
-	let div = createDiv("","")
-    
-    let stackNameInput = createInput("text","devStackInput","Digite a tecnologia conhecida", "devStackTechs", "", "")
-    
-    
+	let div = createDiv("", "")
 
-    let br = document.createElement("br")
-    
-    
-    let rowindex = devExperienceRow
+	let stackNameInput = createInput(
+		"text",
+		"devStackInput",
+		"Digite a tecnologia conhecida",
+		"devStackTechs",
+		"",
+		""
+	)
 
-    let devExperienceLabel0 = createLabel("devExperienceRadio" + rowindex + "-0","0-2 Anos", "checkable inline-block")
-    let devExperienceLabel1 = createLabel("devExperienceRadio" + rowindex + "-1","3-4 Anos", "checkable inline-block")
-    let devExperienceLabel2 = createLabel("devExperienceRadio" + rowindex + "-2","3-4 Anos", "checkable inline-block")
+	let br = document.createElement("br")
 
-    
-    let devExperienceRadio0 = createInput("radio", "devExperience" + rowindex + "-0","","devExperienceRadio", "devExperienceRadio" + rowindex + "-0","0-2 years")
-    let devExperienceRadio1 = createInput("radio", "devExperience" + rowindex + "-1","","devExperienceRadio", "devExperienceRadio" + rowindex + "-1","3-4 years")
-    let devExperienceRadio2 = createInput("radio", "devExperience" + rowindex + "-2","","devExperienceRadio", "devExperienceRadio" + rowindex + "-2","5+ years")
-    
+	let rowindex = devExperienceRow
+
+	let devExperienceLabel0 = createLabel(
+		"devExperienceRadio" + rowindex + "-0",
+		"0-2 Anos",
+		"checkable inline-block"
+	)
+	let devExperienceLabel1 = createLabel(
+		"devExperienceRadio" + rowindex + "-1",
+		"3-4 Anos",
+		"checkable inline-block"
+	)
+	let devExperienceLabel2 = createLabel(
+		"devExperienceRadio" + rowindex + "-2",
+		"3-4 Anos",
+		"checkable inline-block"
+	)
+
+	let devExperienceRadio0 = createInput(
+		"radio",
+		"devExperience" + rowindex + "-0",
+		"",
+		"devExperienceRadio",
+		"devExperienceRadio" + rowindex + "-0",
+		"0-2 years"
+	)
+	let devExperienceRadio1 = createInput(
+		"radio",
+		"devExperience" + rowindex + "-1",
+		"",
+		"devExperienceRadio",
+		"devExperienceRadio" + rowindex + "-1",
+		"3-4 years"
+	)
+	let devExperienceRadio2 = createInput(
+		"radio",
+		"devExperience" + rowindex + "-2",
+		"",
+		"devExperienceRadio",
+		"devExperienceRadio" + rowindex + "-2",
+		"5+ years"
+	)
+
 	let devStackBtnRmv = btnRmvInput()
-	
 
-    devExperienceRow++
+	devExperienceRow++
 
-    div.append(stackNameInput, devStackBtnRmv, br, devExperienceRadio0, devExperienceLabel0, devExperienceRadio1, devExperienceLabel1, devExperienceRadio2, devExperienceLabel2)
+	div.append(
+		stackNameInput,
+		devStackBtnRmv,
+		br,
+		devExperienceRadio0,
+		devExperienceLabel0,
+		devExperienceRadio1,
+		devExperienceLabel1,
+		devExperienceRadio2,
+		devExperienceLabel2
+	)
 
-    return div
+	return div
 }
 
 const confirmation = () => {
-	let div = document.createElement("div")
+	let div = createDiv()
 	let btnSave = document.createElement("button")
 	btnSave.textContent = "Salvar"
 	btnSave.id = "btnSave"
 	btnSave.className = "green"
 	btnSave.addEventListener("click", (ev) => {
 		saveData()
-		btnDetails.disabled = false
 		resetInput()
-		let formChildren = document.getElementById("formCh ildren")
+		let formChildren = document.getElementById("formChildren")
 		while (formChildren.firstChild) {
 			formChildren.removeChild(formChildren.firstChild)
 		}
@@ -66,7 +109,6 @@ const confirmation = () => {
 	btnCancel.id = "btnCancel"
 	btnCancel.className = "red"
 	btnCancel.addEventListener("click", (ev) => {
-		btnDetails.disabled = false
 		resetInput()
 		let formChildren = document.getElementById("formChildren")
 		while (formChildren.firstChild) {
@@ -79,20 +121,20 @@ const confirmation = () => {
 }
 
 const resetInput = () => {
-	let resetInput = document.getElementById("inputDevName")
+	let resetInput = document.getElementById("devNameInput")
 	resetInput.value = ""
 }
 
 const saveData = () => {
 	let newDeveloper = {}
 	newDeveloper.name = document.querySelector(
-		`input[name="inputDevName"]`
+		`input[name="devNameInput"]`
 	).value
 	newDeveloper.stack = document.querySelector(
-		`input[name="inputDevStack"]`
+		`input[name="devStackInput"]`
 	).value
 	newDeveloper.experience = document.querySelector(
-		`input[name="inputDevExperience"]:checked`
+		`input[class="devExperienceRadio"]:checked`
 	).value
 
 	developer.push(newDeveloper)
@@ -125,18 +167,24 @@ const createDiv = () => {
 	return element
 }
 
-const btnRmvInput = () =>{
-	let button = document.createElement ("button")
+const btnRmvInput = () => {
+	let button = document.createElement("button")
 	let rowindex = devExperienceRow
 
 	button.textContent = "-"
 	button.className = "btnDetails red"
-	button.id ="devStackBtnRmv-" + rowindex
-	button.addEventListener("click", (ev)=>{
+	button.id = "devStackBtnRmv-" + rowindex
+	button.addEventListener("click", (ev) => {
 		let elementId = document.getElementById(button.id)
 		elementId.parentElement.remove()
 	})
 	devExperienceRow++
 
 	return button
+}
+
+//append confirmation after the Developer Techs
+{
+	let elementConfirmation = document.getElementById("devRegisterForm")
+	elementConfirmation.append(confirmation())
 }
