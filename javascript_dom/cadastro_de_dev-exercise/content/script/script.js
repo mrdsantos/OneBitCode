@@ -19,7 +19,7 @@ const devStacksPlus = () => {
     
     let stackNameInput = createInput("text","devStackInput","Digite a tecnologia conhecida", "devStackTechs", "", "")
     
-    let devStackBtnAdd = document.getElementById("devStackBtnAdd")
+    
 
     let br = document.createElement("br")
     
@@ -35,11 +35,12 @@ const devStacksPlus = () => {
     let devExperienceRadio1 = createInput("radio", "devExperience" + rowindex + "-1","","devExperienceRadio", "devExperienceRadio" + rowindex + "-1","3-4 years")
     let devExperienceRadio2 = createInput("radio", "devExperience" + rowindex + "-2","","devExperienceRadio", "devExperienceRadio" + rowindex + "-2","5+ years")
     
-
+	let devStackBtnRmv = btnRmvInput()
+	
 
     devExperienceRow++
 
-    div.append(stackNameInput, devStackBtnAdd.cloneNode(true), br, devExperienceRadio0, devExperienceLabel0, devExperienceRadio1, devExperienceLabel1, devExperienceRadio2, devExperienceLabel2)
+    div.append(stackNameInput, devStackBtnRmv, br, devExperienceRadio0, devExperienceLabel0, devExperienceRadio1, devExperienceLabel1, devExperienceRadio2, devExperienceLabel2)
 
     return div
 }
@@ -124,6 +125,18 @@ const createDiv = () => {
 	return element
 }
 
-let btnRmvInput = document.createElement("button")
-btnRmvInput.textContent = "-"
-btnRmvInput.className = "btnDetails red"
+const btnRmvInput = () =>{
+	let button = document.createElement ("button")
+	let rowindex = devExperienceRow
+
+	button.textContent = "-"
+	button.className = "btnDetails red"
+	button.id ="devStackBtnRmv-" + rowindex
+	button.addEventListener("click", (ev)=>{
+		let elementId = document.getElementById(button.id)
+		elementId.parentElement.remove()
+	})
+	devExperienceRow++
+
+	return button
+}
