@@ -86,6 +86,9 @@ do {
 		case "4":
 			alert("Seção encerrada pelo usuário.")
 			break
+		case null:
+			alert("Execução cancelada pelo usuário")
+			return
 		default:
 			alert("Por favor selecione uma opção válida")
 			break
