@@ -61,6 +61,9 @@ function calculadoraDeAreas (input) {
         case "6":
             alert("Programa encerrado pelo usuário.")
             break
+        case null:
+            alert("Execução cancelada pelo usuário. (Esc)")
+            return
         default:
                 alert("Digite uma opção válida.")
         }
