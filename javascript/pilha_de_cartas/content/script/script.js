@@ -3,13 +3,6 @@ let userOption
 
 
 do {
-	//Iteration for CardStack Status
-	// let cardStackCurrent = ""
-	// for (let i = 0; i < cardStack.length; i++) {
-	// 	cardStackCurrent += i + 1 + "ª Carta: " + cardStack[i] + ". \n"
-	// }
-
-	//Interaction Menu
 	userOption = prompt(
 		"Pilha de Cartas\n" +
 			"1- Adicionar uma carta.\n" +
@@ -47,8 +40,10 @@ do {
 			}
 			break
 		case "3":
-			alert("Seção encerrada pelo usuário.")
+			alert("Aplicação encerrada pelo usuário.")
 			break
+		case null:
+			alert("Execução abortada pelo usuário")
 		default:
 			alert("Por favor selecione uma opção válida.")
 	}
