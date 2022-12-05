@@ -38,6 +38,9 @@ do {
 			alert("Programa encerrado pelo usuário")
 			option = "3"
 			break
+		case null:
+			alert("Operação cancelada pelo usuário")
+			return
 		default:
 			alert("Por favor selecione uma opção válida.")
 			break
